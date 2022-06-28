@@ -38,4 +38,19 @@ void list_print(struct list* list){
     }
 }
 
+int list_prepend(struct list* list, void *data){
+    return 0;   
+}
+
+int list_append(struct list* list, void *data){
+    return 0;   
+}
+
+int list_insert(struct list* list, void *data, int index){
+    return 0;
+}
+
+
+
+
 

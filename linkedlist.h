@@ -34,7 +34,7 @@ struct node *node_create();
  *      0 if insert is succesful, 1 otherwise
  *
  */
-int list_prepend(void *data);
+int list_prepend(struct list* list, void *data);
 
 /* Function: list_append
  * ------
@@ -45,7 +45,7 @@ int list_prepend(void *data);
  *  @returns: 
  *      0 if insert is succesful, 1 otherwise
  */
-int list_append(void *data);
+int list_append(struct list* list, void *data);
 
 /* Function: list_insert
  * ------
@@ -57,7 +57,7 @@ int list_append(void *data);
  *  @returns:
  *      int: 0 if insert is successful, 1 otherwise
  */
-int list_insert(void *data, int index);
+int list_insert(struct list* list, void *data, int index);
 
 /* Function: node_print
  * ------
@@ -66,6 +66,6 @@ int list_insert(void *data, int index);
  *  @params: node: node of data to print
  *  @returns: NULL
  */
-void list_print (struct *list list);
+void list_print (struct list* list);
 
 #endif
