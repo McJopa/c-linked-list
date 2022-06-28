@@ -2,14 +2,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct list {
+    struct node* head;
+    void (*data_compare)(void *v1, void *v2);
+    void (*data_printer)(void *data);
+    void (*data_free)(void *data);
+};
+
 struct node {
     void* data;
     struct node* next;
 };
 
-struct node* list_create(){
-    struct node* head = NULL;
-    return head;
+struct list* list_create(void (*data_compare)(void *v1, void* v2)){
+    struct list *list = (struct list*)malloc(sizeof(struct list));
+    list->head = NULL;
+    list->data_compare = data_compare;
+    return list;
 }
 
 struct node* node_create(void * data){
@@ -20,6 +29,13 @@ struct node* node_create(void * data){
     return n;
 }
 
-void node_print(struct node* n){
-    printf(n->data);
+
+void list_print(struct list* list){
+    struct node* temp = list->head;
+    while(temp != NULL){
+        list->data_printer(temp);
+        temp = temp->next;
+    }
 }
+
+
