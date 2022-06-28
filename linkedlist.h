@@ -68,4 +68,15 @@ int list_insert(struct list* list, void *data, int index);
  */
 void list_print (struct list* list);
 
+/* Function: list_print
+ * ------
+ * returns the length of a given list
+ *
+ * @params:
+ *      struct list*: list to compute length of
+ * @returns: 
+ *      int: length of list
+ */
+int list_length (struct list *list);
+
 #endif
