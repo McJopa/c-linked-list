@@ -1,10 +1,7 @@
 #ifndef GENERIC_LINKED_LIST_HEADER
 #define GENERIC_LINKED_LIST_HEADER
 
-struct node {
-    void *data;
-    struct node *next;
-};
+struct node; 
 
 /* Function: list_create
  * ------
@@ -12,9 +9,24 @@ struct node {
  * 
  * @returns: pointer to head of empty linked list
  */
+struct node *list_create();
 
-node *list_create() {
-    return struct node* head = NULL;
-}
+/* Function: node_create
+ * ------
+ *  creates a new node
+ *  
+ *  @params: data: data to insert into the node
+ *  @returns: pointer to the newly created node 
+ */
+struct node *node_create();
+
+/* Function: node_print
+ * ------
+ *  prints the data of a given node
+ *
+ *  @params: node: node of data to print
+ *  @returns: NULL
+ */
+void node_print(struct node* n);
 
 #endif
