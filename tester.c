@@ -24,6 +24,11 @@ int main(int argc, char** argv){
     printf("length of list: %d\n", list_length(list));
     list_append(list, i3);
     printf("length of list: %d\n", list_length(list));
+    
+    list_prepend(list, i3);
+    printf("list insert at 0: %d\n", list_insert(list, i2, 0));
+    list_insert(list, i1, 1);
+    printf("list insert at list length: %d\n", list_insert(list, i1, list_length(list)));
     list_print(list);
 
     return 0;

@@ -52,6 +52,13 @@ void list_print(struct list_t* list){
 }
 
 int list_prepend(struct list_t* list, void *data){
+    struct node *n = node_create(data);
+    if (list->head == NULL) {
+        list->head = n;
+        return 0;
+    }
+    n->next = list->head;
+    list->head = n;
     return 0;   
 }
 
@@ -70,6 +77,23 @@ int list_append(struct list_t* list, void *data){
 }
 
 int list_insert(struct list_t* list, void *data, int index){
+    if(index == 0) {
+        return list_prepend(list, data);
+    }
+    if(index < 0) return 1;
+    struct node *n = node_create(data);
+    int idx = 0;
+    struct node *temp = list->head;
+    struct node *prev = NULL;
+    
+    while(idx != index && temp != NULL) {
+        prev = temp;
+        temp = temp->next;
+        idx++;
+    }
+    if(idx != index) return -1;
+    prev->next = n;
+    n->next = temp;
     return 0;
 }
 
