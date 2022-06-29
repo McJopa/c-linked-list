@@ -1,7 +1,7 @@
 #ifndef GENERIC_LINKED_LIST_HEADER
 #define GENERIC_LINKED_LIST_HEADER
 
-struct list;
+struct list_t;
 struct node;
 
 /* Function: list_create
@@ -11,7 +11,7 @@ struct node;
  * @returns: 
  *      struct list: pointer to head of empty linked list
  */
-struct list *list_create();
+struct list_t *list_create();
 
 /* Function: node_create
  * ------
@@ -34,7 +34,7 @@ struct node *node_create();
  *      0 if insert is succesful, 1 otherwise
  *
  */
-int list_prepend(struct list* list, void *data);
+int list_prepend(struct list_t* list, void *data);
 
 /* Function: list_append
  * ------
@@ -45,7 +45,7 @@ int list_prepend(struct list* list, void *data);
  *  @returns: 
  *      0 if insert is succesful, 1 otherwise
  */
-int list_append(struct list* list, void *data);
+int list_append(struct list_t* list, void *data);
 
 /* Function: list_insert
  * ------
@@ -57,7 +57,7 @@ int list_append(struct list* list, void *data);
  *  @returns:
  *      int: 0 if insert is successful, 1 otherwise
  */
-int list_insert(struct list* list, void *data, int index);
+int list_insert(struct list_t* list, void *data, int index);
 
 /* Function: node_print
  * ------
@@ -66,7 +66,7 @@ int list_insert(struct list* list, void *data, int index);
  *  @params: node: node of data to print
  *  @returns: NULL
  */
-void list_print (struct list* list);
+void list_print (struct list_t* list);
 
 /* Function: list_print
  * ------
@@ -77,6 +77,6 @@ void list_print (struct list* list);
  * @returns: 
  *      int: length of list
  */
-int list_length (struct list *list);
+int list_length (struct list_t *list);
 
 #endif

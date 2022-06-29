@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct list {
+struct list_t {
     int length;
     struct node* head;
     int (*data_compare)(void *v1, void *v2);
@@ -15,8 +15,8 @@ struct node {
     struct node* next;
 };
 
-struct list* list_create(int (*data_compare)(void *v1, void* v2), void (*data_printer)(void *data), void (*data_free)(void *data)){
-    struct list *list = (struct list*)malloc(sizeof(struct list));
+struct list_t* list_create(int (*data_compare)(void *v1, void* v2), void (*data_printer)(void *data), void (*data_free)(void *data)){
+    struct list_t *list = (struct list_t*)malloc(sizeof(struct list_t));
     list->head = NULL;
     list->data_compare = data_compare;
     list->data_printer = data_printer;
@@ -31,7 +31,7 @@ struct node* node_create(void * data){
     return n;
 }
 
-int list_length(struct list *list){
+int list_length(struct list_t *list){
     struct node *temp = list->head;
     int length = 0;
     while (temp != NULL)  {
@@ -41,7 +41,7 @@ int list_length(struct list *list){
     return length;
 }
 
-void list_print(struct list* list){
+void list_print(struct list_t* list){
     struct node* temp = list->head;
     while(temp != NULL){
         list->data_printer(temp->data);
@@ -51,11 +51,11 @@ void list_print(struct list* list){
     printf("\n");
 }
 
-int list_prepend(struct list* list, void *data){
+int list_prepend(struct list_t* list, void *data){
     return 0;   
 }
 
-int list_append(struct list* list, void *data){
+int list_append(struct list_t* list, void *data){
     struct node *n = node_create(data);
     if (list->head == NULL) {
         list->head = n;
@@ -69,7 +69,7 @@ int list_append(struct list* list, void *data){
     return 0;   
 }
 
-int list_insert(struct list* list, void *data, int index){
+int list_insert(struct list_t* list, void *data, int index){
     return 0;
 }
 

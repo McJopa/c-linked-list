@@ -11,7 +11,7 @@ void data_free(void *data);
 
 int main(int argc, char** argv){
 
-    struct list *list = list_create(&data_compare, &data_printer, &data_free);
+    struct list_t *list = list_create(&data_compare, &data_printer, &data_free);
     int *i1 = (int*)malloc(sizeof(int));
     *i1 = 10;
     int *i2 = (int*)malloc(sizeof(int));
