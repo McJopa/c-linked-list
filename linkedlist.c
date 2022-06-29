@@ -97,6 +97,18 @@ int list_insert(struct list_t* list, void *data, int index){
     return 0;
 }
 
+int list_find(struct list_t *list, void *data) {
+    struct node *temp = list->head;
+    int ndx = 0;
+    while (temp != NULL) {
+        if (list->data_compare(data, temp->data) == 0) {
+            return ndx;
+        }
+        temp = temp->next;
+        ndx++;
+    }
+    return -1;
+}
 
 
 

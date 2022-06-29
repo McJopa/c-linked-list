@@ -79,4 +79,5 @@ void list_print (struct list_t* list);
  */
 int list_length (struct list_t *list);
 
+int list_find (struct list_t *list, void *data);
 #endif

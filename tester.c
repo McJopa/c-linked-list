@@ -18,6 +18,8 @@ int main(int argc, char** argv){
     *i2 = 20;
     int *i3 = (int*)malloc(sizeof(int));
     *i3 = 30;
+     int *i4 = (int*)malloc(sizeof(int));
+    *i4 = 40;
     
     list_append(list, i1);
     list_append(list, i2);
@@ -31,6 +33,7 @@ int main(int argc, char** argv){
     printf("list insert at list length: %d\n", list_insert(list, i1, list_length(list)));
     list_print(list);
 
+    printf("Find 40: %d\n", list_find(list, i4));
     return 0;
 }
 
