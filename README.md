@@ -11,11 +11,11 @@ Provides implementation of linked list for generic data types.
 5. Reverse
 6. Destory
 
-##Usage
+## Usage
 Dynamic memory allocation (non-contiguous)
 Fast insertion/deletion of nodes
 
-####disadvantages:
+#### disadvantages:
 - Cannot be directly indexed
 - Extra memory needed for pointers
 - Not cache friendly (non-locality)
